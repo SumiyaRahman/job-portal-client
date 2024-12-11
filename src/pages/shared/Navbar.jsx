@@ -1,16 +1,20 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
-    const links = <>
-        <li>
-            <a>Item 1</a>
-          </li>
-          <li>
-            <a>Item 3</a>
-          </li>
+  const links = (
+    <>
+      <li>
+        <a>Item 1</a>
+      </li>
+      <li>
+        <a>Item 3</a>
+      </li>
     </>
+  );
   return (
-    <div className="navbar bg-base-100">
+    <nav className="bg-[#08322f] text-white">
+      <div className="navbar max-w-7xl mx-auto">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -39,14 +43,16 @@ const Navbar = () => {
         <a className="btn btn-ghost text-xl">daisyUI</a>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-          {links}
-        </ul>
+        <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
-      <div className="navbar-end">
-        <a className="btn">Button</a>
+      <div className="navbar-end space-x-4">
+        <Link to="/register">
+        <span className="text-[#ffdd00] font-bold text-base underline hover:text-[#08322f]">Register</span>
+        </Link>
+        <button className="py-2 px-5 rounded bg-[#ffdd00] text-[#08322f] font-bold text-base">Sign In</button>
       </div>
     </div>
+    </nav>
   );
 };
 
